@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>Name<input name="name" placeholder="Name"></p>
+        <p>Price<input name="price" type="number"></p>
+        <p>Company</p>
+        <select>
+            {% for company in companies %}
+            <option value="{{ company.id }}">{{ company.name }}</option>
+            {% endfor %}
+        </select>
+    </form> 
+</body>
+</html>
